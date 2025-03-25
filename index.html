@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المواد الدراسية</title>
+<title> STEPPING </title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -30,6 +30,9 @@ DEFAULT: '8px',
 }
 </script>
 <style>
+  body{
+    background-color: rgba(184, 164, 120, 0.163);
+  }
 :where([class^="ri-"])::before { content: "\f3c2"; }
 @media (min-width: 768px) {
 .grid-cards {
@@ -38,55 +41,55 @@ grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body >
 <header class="bg-white shadow-sm fixed w-full top-0 z-50">
 <div class="container mx-auto px-4 h-16 flex justify-between items-center">
-<h1 class="text-xl font-bold">نظام التعليم</h1>
+<h1 class="text-xl font-bold"> STEPPING </h1>
 <div class="flex items-center gap-4 relative">
 <div class="cursor-pointer flex items-center gap-2" onclick="toggleProfile()">
-<img src="https://public.readdy.ai/ai/img_res/d40e8f705cba14d49dfd83d2d1b85778.jpg" class="w-10 h-10 rounded-full object-cover" alt="Profile">
-<span class="text-gray-600">أحمد محمد</span>
+<img src="IMG_20250117_134758_537.jpg" class="w-10 h-10 rounded-full object-cover" alt="Profile">
+<span class="text-gray-600"> hansali tamer </span>
 </div>
 <div id="profileModal" class="hidden absolute left-0 top-12 w-72 bg-white rounded-lg shadow-lg p-4 border">
   <div class="space-y-3">
     <div>
-      <p class="text-sm text-gray-500">الاسم الكامل</p>
-      <p class="font-medium">أحمد محمد الأحمد</p>
+      <p class="text-sm text-gray-500"> nom et prenom </p>
+      <p class="font-medium"> hansali tamer </p>
     </div>
     <div>
-      <p class="text-sm text-gray-500">رقم التسجيل</p>
-      <p class="font-medium">20250325</p>
+      <p class="text-sm text-gray-500"> matricul </p>
+      <p class="font-medium">31401606</p>
     </div>
     <div>
-      <p class="text-sm text-gray-500">مجال الدراسة</p>
-      <p class="font-medium">علوم الحاسوب</p>
+      <p class="text-sm text-gray-500"> filiere </p>
+      <p class="font-medium"> mathematique </p>
     </div>
     <div>
-      <p class="text-sm text-gray-500">القسم</p>
-      <p class="font-medium">هندسة البرمجيات</p>
+      <p class="text-sm text-gray-500"> section </p>
+      <p class="font-medium"> A </p>
     </div>
     <div class="pt-2">
       <button onclick="showPasswordModal()" class="w-full bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors">
-        تغيير كلمة المرور
+        changer le mot de passe
       </button>
     </div>
   </div>
 </div>
 <div id="passwordModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white rounded-lg p-6 w-96">
-    <h3 class="text-lg font-semibold mb-4">تغيير كلمة المرور</h3>
+    <h3 class="text-lg font-semibold mb-4"> changer le mot de passe </h3>
     <div class="space-y-4">
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">كلمة المرور الجديدة</label>
+        <label class="block text-sm font-medium text-gray-700 mb-1"> Nouveau mot de passe </label>
         <input type="password" id="newPassword" class="w-full border rounded-button px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20">
       </div>
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">تأكيد كلمة المرور</label>
+        <label class="block text-sm font-medium text-gray-700 mb-1"> Confirmez le mot de passe </label>
         <input type="password" id="confirmPassword" class="w-full border rounded-button px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20">
       </div>
       <div class="flex gap-2">
-        <button onclick="updatePassword()" class="flex-1 bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors">تحديث</button>
-        <button onclick="closePasswordModal()" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-button hover:bg-gray-200 transition-colors">إلغاء</button>
+        <button onclick="updatePassword()" class="flex-1 bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors"> envoyer </button>
+        <button onclick="closePasswordModal()" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-button hover:bg-gray-200 transition-colors"> Annuler </button>
       </div>
     </div>
   </div>
@@ -147,7 +150,7 @@ document.addEventListener('click', (e) => {
 <main class="container mx-auto px-4 pt-24 pb-8">
 <div class="grid grid-cards gap-6 md:grid-cols-3">
 <div class="bg-orange-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4">تحليل رياضي ٢</h3>
+<h3 class="text-lg font-semibold mb-4"> Analyse 2 </h3>
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div class="text-right">
@@ -160,7 +163,7 @@ document.addEventListener('click', (e) => {
 </div>
 </div>
 <div class="bg-purple-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4">خوارزميات ٢</h3>
+<h3 class="text-lg font-semibold mb-4"> Algorithme 2 </h3>
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div class="text-right">
@@ -173,7 +176,7 @@ document.addEventListener('click', (e) => {
 </div>
 </div>
 <div class="bg-blue-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4">جبر خطي ٢</h3>
+<h3 class="text-lg font-semibold mb-4"> Algebre 2 </h3>
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div class="text-right">
@@ -186,7 +189,7 @@ document.addEventListener('click', (e) => {
 </div>
 </div>
 <div class="bg-pink-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4">نظم تشغيل ٢</h3>
+<h3 class="text-lg font-semibold mb-4"> STRM 2 </h3>
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div class="text-right">
@@ -199,7 +202,7 @@ document.addEventListener('click', (e) => {
 </div>
 </div>
 <div class="bg-green-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4">دوائر كهربائية</h3>
+<h3 class="text-lg font-semibold mb-4"> electrique </h3>
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div class="text-right">
@@ -212,7 +215,7 @@ document.addEventListener('click', (e) => {
 </div>
 </div>
 <div class="bg-indigo-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4">إحصاء واحتمالات</h3>
+<h3 class="text-lg font-semibold mb-4"> STAT/PROBA </h3>
 <div class="relative pt-1">
 <div class="flex mb-2 items-center justify-between">
 <div class="text-right">
