@@ -1,233 +1,166 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> STEPPING </title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#4A90E2',
-secondary: '#82C4E1'
-},
-borderRadius: {
-'none': '0px',
-'sm': '4px',
-DEFAULT: '8px',
-'md': '12px',
-'lg': '16px',
-'xl': '20px',
-'2xl': '24px',
-'3xl': '32px',
-'full': '9999px',
-'button': '8px'
-}
-}
-}
-}
-</script>
-<style>
-  body{
-    background-color: rgba(184, 164, 120, 0.163);
-  }
-:where([class^="ri-"])::before { content: "\f3c2"; }
-@media (min-width: 768px) {
-.grid-cards {
-grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دروس البرمجة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#F5F7FA'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: beige;
+        }
+        .youtube-container.active {
+            display: block;
+        }
+        .youtube-container {
+            display: none;
+        }
+    </style>
 </head>
 <body >
-<header class="bg-white shadow-sm fixed w-full top-0 z-50">
-<div class="container mx-auto px-4 h-16 flex justify-between items-center">
-<h1 class="text-xl font-bold"> STEPPING </h1>
-<div class="flex items-center gap-4 relative">
-<div class="cursor-pointer flex items-center gap-2" onclick="toggleProfile()">
-<img src="IMG_20250117_134758_537.jpg" class="w-10 h-10 rounded-full object-cover" alt="Profile">
-<span class="text-gray-600"> hansali tamer </span>
-</div>
-<div id="profileModal" class="hidden absolute left-0 top-12 w-72 bg-white rounded-lg shadow-lg p-4 border">
-  <div class="space-y-3">
-    <div>
-      <p class="text-sm text-gray-500"> nom et prenom </p>
-      <p class="font-medium"> hansali tamer </p>
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">دروس البرمجة والخوارزميات</h1>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="channel-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showPlaylist('playlist1')">
+                <img src="https://public.readdy.ai/ai/img_res/cc17823d2b804240872f7fdf4a4668c2.jpg" alt="قناة البرمجة" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">قناة البرمجة الأساسية</h3>
+                    <p class="text-gray-600 text-sm">دروس في أساسيات البرمجة والخوارزميات</p>
+                </div>
+            </div>
+
+            <div class="channel-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showPlaylist('playlist2')">
+                <img src="https://public.readdy.ai/ai/img_res/dc247d4bef0c245f20ff7e35af310858.jpg" alt="قناة الخوارزميات" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">قناة الخوارزميات المتقدمة</h3>
+                    <p class="text-gray-600 text-sm">دروس في هياكل البيانات والخوارزميات المتقدمة</p>
+                </div>
+            </div>
+
+            <div class="channel-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showPlaylist('playlist3')">
+                <img src="https://public.readdy.ai/ai/img_res/fee7392ca05fead30843c6404442532b.jpg" alt="قناة تطوير الويب" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">قناة تطوير الويب</h3>
+                    <p class="text-gray-600 text-sm">دروس في تطوير مواقع الويب</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="playlist1" class="youtube-container mb-12">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-[500px]" src="https://www.youtube.com/embed/videoseries?list=PLDoPjvoNmBAw_t_XWUFbBX-c9MafPk9ji" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="playlist2" class="youtube-container mb-12">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-[500px]" src="https://www.youtube.com/embed/videoseries?list=PLDoPjvoNmBAw6p0z0Ek0OjPzeXoqlFlCh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="playlist3" class="youtube-container mb-12">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-[500px]" src="https://www.youtube.com/embed/videoseries?list=PLDoPjvoNmBAzHSjcR-HnW9tnxyuye8KbF" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-12">
+            <h2 class="text-2xl font-bold mb-6">الملفات التعليمية</h2>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div class="flex items-center">
+                        <i class="ri-file-pdf-line text-red-500 text-2xl ml-3"></i>
+                        <span class="font-medium">أساسيات البرمجة</span>
+                    </div>
+                    <button onclick="downloadPDF('basics')" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-blue-600 transition-colors flex items-center">
+                        <i class="ri-download-line ml-2"></i>
+                        تحميل
+                    </button>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div class="flex items-center">
+                        <i class="ri-file-pdf-line text-red-500 text-2xl ml-3"></i>
+                        <span class="font-medium">الخوارزميات المتقدمة</span>
+                    </div>
+                    <button onclick="downloadPDF('advanced')" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-blue-600 transition-colors flex items-center">
+                        <i class="ri-download-line ml-2"></i>
+                        تحميل
+                    </button>
+                </div>
+                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div class="flex items-center">
+                        <i class="ri-file-pdf-line text-red-500 text-2xl ml-3"></i>
+                        <span class="font-medium">تمارين وتطبيقات</span>
+                    </div>
+                    <button onclick="downloadPDF('exercises')" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-blue-600 transition-colors flex items-center">
+                        <i class="ri-download-line ml-2"></i>
+                        تحميل
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">وصف الدورة</h2>
+            <p class="text-gray-700 leading-relaxed">
+                تقدم هذه الدورة مجموعة شاملة من الدروس في البرمجة والخوارزميات، مصممة للمبتدئين والمتقدمين على حد سواء. تغطي المواد التعليمية أساسيات البرمجة، هياكل البيانات، الخوارزميات المتقدمة، وتطوير الويب. من خلال مزيج من المحاضرات المرئية والمواد المكتوبة، ستتمكن من بناء أساس قوي في علوم الحاسوب وتطوير المهارات العملية اللازمة للنجاح في مجال البرمجة.
+            </p>
+        </div>
     </div>
-    <div>
-      <p class="text-sm text-gray-500"> matricul </p>
-      <p class="font-medium">31401606</p>
-    </div>
-    <div>
-      <p class="text-sm text-gray-500"> filiere </p>
-      <p class="font-medium"> mathematique </p>
-    </div>
-    <div>
-      <p class="text-sm text-gray-500"> section </p>
-      <p class="font-medium"> A </p>
-    </div>
-    <div class="pt-2">
-      <button onclick="showPasswordModal()" class="w-full bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors">
-        changer le mot de passe
-      </button>
-    </div>
-  </div>
-</div>
-<div id="passwordModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg p-6 w-96">
-    <h3 class="text-lg font-semibold mb-4"> changer le mot de passe </h3>
-    <div class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1"> Nouveau mot de passe </label>
-        <input type="password" id="newPassword" class="w-full border rounded-button px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1"> Confirmez le mot de passe </label>
-        <input type="password" id="confirmPassword" class="w-full border rounded-button px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/20">
-      </div>
-      <div class="flex gap-2">
-        <button onclick="updatePassword()" class="flex-1 bg-primary text-white py-2 px-4 rounded-button hover:bg-primary/90 transition-colors"> envoyer </button>
-        <button onclick="closePasswordModal()" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-button hover:bg-gray-200 transition-colors"> Annuler </button>
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-function toggleProfile() {
-  const modal = document.getElementById('profileModal');
-  modal.classList.toggle('hidden');
-}
-function showPasswordModal() {
-  document.getElementById('passwordModal').classList.remove('hidden');
-  document.getElementById('profileModal').classList.add('hidden');
-}
-function closePasswordModal() {
-  document.getElementById('passwordModal').classList.add('hidden');
-}
-function updatePassword() {
-  const newPassword = document.getElementById('newPassword').value;
-  const confirmPassword = document.getElementById('confirmPassword').value;
-  
-  if (!newPassword || !confirmPassword) {
-    showNotification('يرجى ملء جميع الحقول', 'error');
-    return;
-  }
-  
-  if (newPassword !== confirmPassword) {
-    showNotification('كلمات المرور غير متطابقة', 'error');
-    return;
-  }
-  showNotification('تم تحديث كلمة المرور بنجاح', 'success');
-  closePasswordModal();
-}
-function showNotification(message, type) {
-  const notification = document.createElement('div');
-  notification.className = `fixed top-4 left-4 p-4 rounded-lg text-white ${type === 'success' ? 'bg-green-500' : 'bg-red-500'} z-50`;
-  notification.textContent = message;
-  document.body.appendChild(notification);
-  
-  setTimeout(() => {
-    notification.remove();
-  }, 3000);
-}
-document.addEventListener('click', (e) => {
-  const profileModal = document.getElementById('profileModal');
-  const passwordModal = document.getElementById('passwordModal');
-  
-  if (!e.target.closest('#profileModal') && !e.target.closest('.cursor-pointer')) {
-    profileModal.classList.add('hidden');
-  }
-  
-  if (e.target === passwordModal) {
-    closePasswordModal();
-  }
-});
-</script>
-</div>
-</header>
-<main class="container mx-auto px-4 pt-24 pb-8">
-<div class="grid grid-cards gap-6 md:grid-cols-3">
-<div class="bg-orange-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4"> Analyse 2 </h3>
-<div class="relative pt-1">
-<div class="flex mb-2 items-center justify-between">
-<div class="text-right">
-<span class="text-xs font-semibold inline-block text-orange-600">33%</span>
-</div>
-</div>
-<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-orange-200">
-<div style="width:33%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500"></div>
-</div>
-</div>
-</div>
-<div class="bg-purple-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4"> Algorithme 2 </h3>
-<div class="relative pt-1">
-<div class="flex mb-2 items-center justify-between">
-<div class="text-right">
-<span class="text-xs font-semibold inline-block text-purple-600">100%</span>
-</div>
-</div>
-<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-purple-200">
-<div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"></div>
-</div>
-</div>
-</div>
-<div class="bg-blue-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4"> Algebre 2 </h3>
-<div class="relative pt-1">
-<div class="flex mb-2 items-center justify-between">
-<div class="text-right">
-<span class="text-xs font-semibold inline-block text-blue-600">100%</span>
-</div>
-</div>
-<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
-<div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
-</div>
-</div>
-</div>
-<div class="bg-pink-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4"> STRM 2 </h3>
-<div class="relative pt-1">
-<div class="flex mb-2 items-center justify-between">
-<div class="text-right">
-<span class="text-xs font-semibold inline-block text-pink-600">75%</span>
-</div>
-</div>
-<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
-<div style="width:75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
-</div>
-</div>
-</div>
-<div class="bg-green-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4"> electrique </h3>
-<div class="relative pt-1">
-<div class="flex mb-2 items-center justify-between">
-<div class="text-right">
-<span class="text-xs font-semibold inline-block text-green-600">90%</span>
-</div>
-</div>
-<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-green-200">
-<div style="width:90%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"></div>
-</div>
-</div>
-</div>
-<div class="bg-indigo-50 rounded-lg p-6 shadow-sm">
-<h3 class="text-lg font-semibold mb-4"> STAT/PROBA </h3>
-<div class="relative pt-1">
-<div class="flex mb-2 items-center justify-between">
-<div class="text-right">
-<span class="text-xs font-semibold inline-block text-indigo-600">45%</span>
-</div>
-</div>
-<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-200">
-<div style="width:45%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"></div>
-</div>
-</div>
-</div>
-</div>
-</main>
+
+    <script>
+        function showPlaylist(playlistId) {
+            document.querySelectorAll('.youtube-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(playlistId).classList.add('active');
+        }
+
+        function downloadPDF(type) {
+            const files = {
+                'basics': 'اساسيات_البرمجة.pdf',
+                'advanced': 'الخوارزميات_المتقدمة.pdf',
+                'exercises': 'تمارين_وتطبيقات.pdf'
+            };
+            
+            const link = document.createElement('a');
+            link.href = `/assets/pdfs/${files[type]}`;
+            link.download = files[type];
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
